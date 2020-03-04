@@ -61,4 +61,4 @@ The synthesis and p&r script can be found in the folders named syn  and pnr
 Sample layout
 ----
 
-![alt text][png/layout.gif]
+![alt text](layout.gif)
