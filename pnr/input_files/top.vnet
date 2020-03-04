@@ -1,0 +1,68 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : N-2017.09-SP4
+// Date      : Thu Oct 31 12:47:28 2019
+/////////////////////////////////////////////////////////////
+
+
+module top_DW01_add_0 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   n1;
+  wire   [7:1] carry;
+
+  FAX1 U1_7 ( .A(A[7]), .B(B[7]), .C(carry[7]), .YS(SUM[7]) );
+  FAX1 U1_6 ( .A(A[6]), .B(B[6]), .C(carry[6]), .YC(carry[7]), .YS(SUM[6]) );
+  FAX1 U1_5 ( .A(A[5]), .B(B[5]), .C(carry[5]), .YC(carry[6]), .YS(SUM[5]) );
+  FAX1 U1_4 ( .A(A[4]), .B(B[4]), .C(carry[4]), .YC(carry[5]), .YS(SUM[4]) );
+  FAX1 U1_3 ( .A(A[3]), .B(B[3]), .C(carry[3]), .YC(carry[4]), .YS(SUM[3]) );
+  FAX1 U1_2 ( .A(A[2]), .B(B[2]), .C(carry[2]), .YC(carry[3]), .YS(SUM[2]) );
+  FAX1 U1_1 ( .A(A[1]), .B(B[1]), .C(n1), .YC(carry[2]), .YS(SUM[1]) );
+  AND2X1 U1 ( .A(B[0]), .B(A[0]), .Y(n1) );
+  XOR2X1 U2 ( .A(B[0]), .B(A[0]), .Y(SUM[0]) );
+endmodule
+
+
+module top ( clk, csb0, web0, addr0, din0, dout0, other0, other1 );
+  input [8:0] addr0;
+  input [7:0] din0;
+  output [7:0] dout0;
+  output [7:0] other1;
+  input clk, csb0, web0, other0;
+  wire   n19, n20, n21, n22, n23, n24, n25, n26, n3, n5, n7, n9, n11, n13, n15,
+         n17;
+  wire   [7:0] r_other;
+
+  sram_w8_b512_freepdk45 R0 ( .din0(din0), .dout0({n19, n20, n21, n22, n23, 
+        n24, n25, n26}), .addr0(addr0), .csb0(csb0), .web0(web0), .clk0(clk)
+         );
+  TSV \TSV_GEN[0].TSV0  ( .data_in(r_other[0]), .data_out(other1[0]) );
+  TSV \TSV_GEN[1].TSV0  ( .data_in(r_other[1]), .data_out(other1[1]) );
+  TSV \TSV_GEN[2].TSV0  ( .data_in(r_other[2]), .data_out(other1[2]) );
+  TSV \TSV_GEN[3].TSV0  ( .data_in(r_other[3]), .data_out(other1[3]) );
+  TSV \TSV_GEN[4].TSV0  ( .data_in(r_other[4]), .data_out(other1[4]) );
+  TSV \TSV_GEN[5].TSV0  ( .data_in(r_other[5]), .data_out(other1[5]) );
+  TSV \TSV_GEN[6].TSV0  ( .data_in(r_other[6]), .data_out(other1[6]) );
+  TSV \TSV_GEN[7].TSV0  ( .data_in(r_other[7]), .data_out(other1[7]) );
+  INVX1 U3 ( .A(n26), .Y(n3) );
+  INVX1 U4 ( .A(n3), .Y(dout0[0]) );
+  INVX1 U5 ( .A(n25), .Y(n5) );
+  INVX1 U6 ( .A(n5), .Y(dout0[1]) );
+  INVX1 U7 ( .A(n24), .Y(n7) );
+  INVX1 U8 ( .A(n7), .Y(dout0[2]) );
+  INVX1 U9 ( .A(n23), .Y(n9) );
+  INVX1 U10 ( .A(n9), .Y(dout0[3]) );
+  INVX1 U11 ( .A(n22), .Y(n11) );
+  INVX1 U12 ( .A(n11), .Y(dout0[4]) );
+  INVX1 U13 ( .A(n21), .Y(n13) );
+  INVX1 U14 ( .A(n13), .Y(dout0[5]) );
+  INVX1 U15 ( .A(n20), .Y(n15) );
+  INVX1 U16 ( .A(n15), .Y(dout0[6]) );
+  INVX1 U17 ( .A(n19), .Y(n17) );
+  INVX1 U18 ( .A(n17), .Y(dout0[7]) );
+  top_DW01_add_0 add_26 ( .A(dout0), .B(din0), .CI(1'b0), .SUM(r_other) );
+endmodule
+

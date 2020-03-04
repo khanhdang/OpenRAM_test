@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: N-2017.09-SP4
+Date   : Tue Oct 29 12:00:10 2019
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    gscl45nm (File: /home/dkit/FreePDK45/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+    sram_w8_b512_freepdk45_TT_1p0V_25C_lib (File: /home/userdata/khanhdn/WORKSPACE/Test_OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45_TT_1p0V_25C.db)
+
+Number of ports:                           30
+Number of nets:                            34
+Number of cells:                            6
+Number of combinational cells:              3
+Number of sequential cells:                 2
+Number of macros/black boxes:               1
+Number of buf/inv:                          2
+Number of references:                       4
+
+Combinational area:                  5.162300
+Buf/Inv area:                        2.815800
+Noncombinational area:              10.324600
+Macro/Black Box area:             9231.380859
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  9246.867759
+Total area:                 undefined
+1

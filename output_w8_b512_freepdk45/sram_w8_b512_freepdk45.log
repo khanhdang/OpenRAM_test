@@ -1,0 +1,102 @@
+|==============================================================================|
+|=========                       OpenRAM v1.1.0                       =========|
+|=========                                                            =========|
+|=========               VLSI Design and Automation Lab               =========|
+|=========        Computer Science and Engineering Department         =========|
+|=========            University of California Santa Cruz             =========|
+|=========                                                            =========|
+|=========          Usage help: openram-user-group@ucsc.edu           =========|
+|=========        Development help: openram-dev-group@ucsc.edu        =========|
+|=========         Temp dir: /tmp/openram_khanhdn_35822_temp/         =========|
+|=========                See LICENSE for license info                =========|
+|==============================================================================|
+** Start: 10/29/2019 10:41:55
+Technology: freepdk45
+Total size: 4096 bits
+Word size: 8
+Words: 512
+Banks: 1
+Write size: None
+RW ports: 1
+R-only ports: 0
+W-only ports: 0
+DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+DRC/LVS/PEX is disabled (check_lvsdrc=True to enable).
+Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+Words per row: 8
+Output files are: 
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.sp
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.v
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.lib
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.py
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.html
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.log
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.lef
+/home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.gds
+** Submodules: 3.8 seconds
+** Placement: 0.0 seconds
+**** Retrieving pins: 0.4 seconds
+**** Analyzing pins: 430.7 seconds
+**** Finding blockages: 1.5 seconds
+**** Converting blockages: 0.0 seconds
+**** Converting pins: 13.2 seconds
+**** Separating adjacent pins: 47.2 seconds
+**** Enclosing pins: 4.3 seconds
+*** Finding pins and blockages: 497.3 seconds
+*** Routing supply rails: 12.5 seconds
+*** Simple overlap routing: 0.0 seconds
+*** Maze routing supplies: 27.7 seconds
+** Routing: 677.8 seconds
+** Verification: 0.0 seconds
+** SRAM creation: 682.2 seconds
+LEF: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.lef
+** LEF: 21.0 seconds
+GDS: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.gds
+** GDS: 1.2 seconds
+SP: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.sp
+** Spice writing: 0.3 seconds
+LIB: Characterizing... 
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+WARNING: file hierarchy_spice.py: line 325: Design Class ptx logical effort function needs to be defined
+
+WARNING: file hierarchy_spice.py: line 328: Class ptx name nmos_m1_w0_720
+
+** Characterization: 425.7 seconds
+Config: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.py
+** Config: 0.0 seconds
+Datasheet: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.html
+** Datasheet: 0.0 seconds
+Verilog: Writing to /home/LOCAL/khanhdn/OpenRAM/output_w8_b512_freepdk45/sram_w8_b512_freepdk45.v
+** Verilog: 0.0 seconds
+** End: 1130.4 seconds

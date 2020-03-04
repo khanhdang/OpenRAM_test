@@ -1,0 +1,52 @@
+###################################################################
+
+# Created by write_sdc on Thu Oct 31 12:47:28 2019
+
+###################################################################
+set sdc_version 2.0
+
+set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
+create_clock [get_ports clk]  -name clock  -period 2  -waveform {0 1}
+set_clock_latency 0.2  [get_clocks clock]
+set_clock_uncertainty 0.3  [get_clocks clock]
+set_clock_transition -min -fall 0.5 [get_clocks clock]
+set_clock_transition -min -rise 0.5 [get_clocks clock]
+set_clock_transition -max -fall 0.5 [get_clocks clock]
+set_clock_transition -max -rise 0.5 [get_clocks clock]
+group_path -name CLOCK  -to [get_clocks clock]
+set_input_delay -clock clock  1  [get_ports csb0]
+set_input_delay -clock clock  1  [get_ports web0]
+set_input_delay -clock clock  1  [get_ports {addr0[8]}]
+set_input_delay -clock clock  1  [get_ports {addr0[7]}]
+set_input_delay -clock clock  1  [get_ports {addr0[6]}]
+set_input_delay -clock clock  1  [get_ports {addr0[5]}]
+set_input_delay -clock clock  1  [get_ports {addr0[4]}]
+set_input_delay -clock clock  1  [get_ports {addr0[3]}]
+set_input_delay -clock clock  1  [get_ports {addr0[2]}]
+set_input_delay -clock clock  1  [get_ports {addr0[1]}]
+set_input_delay -clock clock  1  [get_ports {addr0[0]}]
+set_input_delay -clock clock  1  [get_ports {din0[7]}]
+set_input_delay -clock clock  1  [get_ports {din0[6]}]
+set_input_delay -clock clock  1  [get_ports {din0[5]}]
+set_input_delay -clock clock  1  [get_ports {din0[4]}]
+set_input_delay -clock clock  1  [get_ports {din0[3]}]
+set_input_delay -clock clock  1  [get_ports {din0[2]}]
+set_input_delay -clock clock  1  [get_ports {din0[1]}]
+set_input_delay -clock clock  1  [get_ports {din0[0]}]
+set_input_delay -clock clock  1  [get_ports other0]
+set_output_delay -clock clock  1  [get_ports {dout0[7]}]
+set_output_delay -clock clock  1  [get_ports {dout0[6]}]
+set_output_delay -clock clock  1  [get_ports {dout0[5]}]
+set_output_delay -clock clock  1  [get_ports {dout0[4]}]
+set_output_delay -clock clock  1  [get_ports {dout0[3]}]
+set_output_delay -clock clock  1  [get_ports {dout0[2]}]
+set_output_delay -clock clock  1  [get_ports {dout0[1]}]
+set_output_delay -clock clock  1  [get_ports {dout0[0]}]
+set_output_delay -clock clock  1  [get_ports {other1[7]}]
+set_output_delay -clock clock  1  [get_ports {other1[6]}]
+set_output_delay -clock clock  1  [get_ports {other1[5]}]
+set_output_delay -clock clock  1  [get_ports {other1[4]}]
+set_output_delay -clock clock  1  [get_ports {other1[3]}]
+set_output_delay -clock clock  1  [get_ports {other1[2]}]
+set_output_delay -clock clock  1  [get_ports {other1[1]}]
+set_output_delay -clock clock  1  [get_ports {other1[0]}]

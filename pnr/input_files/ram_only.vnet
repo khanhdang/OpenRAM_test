@@ -1,0 +1,102 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : N-2017.09-SP4
+// Date      : Sun Nov  3 21:13:10 2019
+/////////////////////////////////////////////////////////////
+
+
+module ram_only_DW01_add_1 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n15, n16, n19, n53,
+         n54, n55, n56, n57, n58, n59, n60, n61, n62, n63, n64, n65, n66;
+  assign SUM[0] = n4;
+
+  FAX1 U3 ( .A(B[6]), .B(A[6]), .C(n6), .YC(n5), .YS(SUM[6]) );
+  FAX1 U4 ( .A(B[5]), .B(A[5]), .C(n7), .YC(n6), .YS(SUM[5]) );
+  FAX1 U5 ( .A(B[4]), .B(A[4]), .C(n8), .YC(n7), .YS(SUM[4]) );
+  FAX1 U6 ( .A(B[3]), .B(A[3]), .C(n9), .YC(n8), .YS(SUM[3]) );
+  XOR2X1 U7 ( .A(n55), .B(n63), .Y(SUM[2]) );
+  OAI21X1 U8 ( .A(n64), .B(n12), .C(n61), .Y(n9) );
+  XNOR2X1 U13 ( .A(n62), .B(n60), .Y(SUM[1]) );
+  AND2X1 U30 ( .A(B[1]), .B(A[1]), .Y(n16) );
+  AND2X1 U31 ( .A(n57), .B(n53), .Y(n3) );
+  AND2X1 U32 ( .A(n61), .B(n10), .Y(n2) );
+  AND2X1 U33 ( .A(n59), .B(n65), .Y(n4) );
+  OR2X1 U34 ( .A(A[1]), .B(B[1]), .Y(n53) );
+  INVX1 U35 ( .A(n15), .Y(n54) );
+  BUFX2 U36 ( .A(n12), .Y(n55) );
+  XNOR2X1 U37 ( .A(n5), .B(n56), .Y(SUM[7]) );
+  XNOR2X1 U38 ( .A(A[7]), .B(B[7]), .Y(n56) );
+  INVX2 U39 ( .A(n66), .Y(n12) );
+  INVX1 U40 ( .A(n16), .Y(n57) );
+  OR2X2 U41 ( .A(A[1]), .B(B[1]), .Y(n15) );
+  AND2X2 U42 ( .A(B[0]), .B(A[0]), .Y(n19) );
+  INVX1 U43 ( .A(n19), .Y(n58) );
+  AND2X1 U44 ( .A(B[0]), .B(A[0]), .Y(n60) );
+  INVX1 U45 ( .A(n60), .Y(n59) );
+  AND2X1 U46 ( .A(B[2]), .B(A[2]), .Y(n11) );
+  INVX1 U47 ( .A(n11), .Y(n61) );
+  INVX1 U48 ( .A(n3), .Y(n62) );
+  INVX1 U49 ( .A(n2), .Y(n63) );
+  OR2X1 U50 ( .A(A[2]), .B(B[2]), .Y(n10) );
+  INVX1 U51 ( .A(n10), .Y(n64) );
+  OR2X1 U52 ( .A(A[0]), .B(B[0]), .Y(n65) );
+  OAI21X1 U53 ( .A(n58), .B(n54), .C(n57), .Y(n66) );
+endmodule
+
+
+module ram_only ( clk, rst_n, csb0, web0, din0, din1, addr0, dout0, dout1, 
+        equal );
+  input [7:0] din0;
+  input [7:0] din1;
+  input [8:0] addr0;
+  output [7:0] dout0;
+  output [7:0] dout1;
+  input clk, rst_n, csb0, web0;
+  output equal;
+  wire   N1, N2, N3, N4, N5, N6, N7, N8, n9, n10, n11, n12, n13, n14, n15, n16,
+         n17, n18, n19, n20, n22, n23, n24, n25;
+
+  sram_w8_b512_freepdk45 R0 ( .din0(din0), .dout0(dout0), .addr0(addr0), 
+        .csb0(csb0), .web0(web0), .clk0(clk) );
+  DFFSR \dout1_reg[7]  ( .D(N8), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[7])
+         );
+  DFFSR \dout1_reg[6]  ( .D(N7), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[6])
+         );
+  DFFSR \dout1_reg[5]  ( .D(N6), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[5])
+         );
+  DFFSR \dout1_reg[4]  ( .D(N5), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[4])
+         );
+  DFFSR \dout1_reg[3]  ( .D(N4), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[3])
+         );
+  DFFSR \dout1_reg[2]  ( .D(N3), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[2])
+         );
+  DFFSR \dout1_reg[1]  ( .D(N2), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[1])
+         );
+  DFFSR \dout1_reg[0]  ( .D(N1), .CLK(clk), .R(rst_n), .S(1'b1), .Q(dout1[0])
+         );
+  NOR3X1 U11 ( .A(n25), .B(n23), .C(n24), .Y(equal) );
+  XNOR2X1 U13 ( .A(din1[2]), .B(din0[2]), .Y(n13) );
+  XNOR2X1 U14 ( .A(din1[3]), .B(din0[3]), .Y(n12) );
+  XNOR2X1 U16 ( .A(din1[5]), .B(din0[5]), .Y(n15) );
+  XNOR2X1 U17 ( .A(din1[4]), .B(din0[4]), .Y(n14) );
+  NAND3X1 U18 ( .A(n16), .B(n17), .C(n22), .Y(n9) );
+  XOR2X1 U20 ( .A(din1[0]), .B(din0[0]), .Y(n20) );
+  XOR2X1 U21 ( .A(din1[1]), .B(din0[1]), .Y(n19) );
+  XNOR2X1 U22 ( .A(din1[7]), .B(din0[7]), .Y(n17) );
+  XNOR2X1 U23 ( .A(din1[6]), .B(din0[6]), .Y(n16) );
+  OR2X1 U25 ( .A(n19), .B(n20), .Y(n18) );
+  INVX1 U26 ( .A(n18), .Y(n22) );
+  AND2X1 U27 ( .A(n14), .B(n15), .Y(n10) );
+  INVX1 U28 ( .A(n10), .Y(n23) );
+  AND2X1 U29 ( .A(n12), .B(n13), .Y(n11) );
+  INVX1 U30 ( .A(n11), .Y(n24) );
+  BUFX2 U31 ( .A(n9), .Y(n25) );
+  ram_only_DW01_add_1 add_18 ( .A(din0), .B(din1), .CI(1'b0), .SUM({N8, N7, N6, 
+        N5, N4, N3, N2, N1}) );
+endmodule
+
